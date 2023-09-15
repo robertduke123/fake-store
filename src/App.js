@@ -1,10 +1,28 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react'
+import { commerce } from './lib/commerce'
+import {Products, Navbar} from './components'
 
-export default function App() {
+function App() {
+  const [products, setProducts] = useState([])
 
-  return(
+  const fetchProduct = async () => {
+    const {data} = await commerce.products.list()
+    setProducts(data)
+  }
+
+  useEffect(() => {
+    fetchProduct()
+  }, [])
+
+  console.log(products);
+
+  return (
     <div>
-      
+      <Products products={products}/>
+      <Navbar/>
     </div>
   )
 }
+
+export default App
+
