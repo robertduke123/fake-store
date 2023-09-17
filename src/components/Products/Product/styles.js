@@ -1,6 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
+  type: {
+   gontSize: '1rem'
+  }  ,
   root: {
     maxWidth: '100%',
   },
