@@ -8,7 +8,7 @@ import usestyles from './styles'
 //     {id: 2, name: 'Macbook', description: 'Apple macbook.', price: '$10', image: 'https://fr.shopping.rakuten.com/photo/1554014847_ML.jpg'}
 // ]
 
-export default function Products({products}) {
+export default function Products({products, onAddToCart}) {
     const classes = usestyles()
 
     return(
@@ -18,7 +18,7 @@ export default function Products({products}) {
                 {products.map(product => {
                     return(
                         <Grid item key={product.id} xs={12} md={4} lg={3}>
-                            <Product product={product}/>
+                            <Product product={product} onAddToCart={onAddToCart}/>
                         </Grid>
                 )})}
             </Grid>
