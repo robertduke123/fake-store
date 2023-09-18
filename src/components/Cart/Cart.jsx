@@ -16,7 +16,7 @@ const Cart = ({cart, onUpdateCart, onRemoveFromCart, onEmptyCart }) => {
       <Typography className={classes.title} varient='h3' gutterBottom> Your Shopping Cart</Typography>
       {cart && !cart.line_items.length ?       
       <Typography varient='subtitle1'>You have no items in your shopping cart, 
-        <Link to='/' className={classes.link}>start adding some!</Link>
+        <Link to='/' className={classes.link}> start adding some!</Link>
       </Typography> : 
       <>
             <Grid container spcing={3}>
@@ -27,7 +27,7 @@ const Cart = ({cart, onUpdateCart, onRemoveFromCart, onEmptyCart }) => {
                 ))}
             </Grid>
             <div className={classes.cardDetails}>
-                <Typography variant='h3'> Subtotal : {cart && cart.subtotal.formatted_with_symbol}</Typography>
+                <Typography variant='h4'> Subtotal : {cart && cart.subtotal.formatted_with_symbol}</Typography>
                 <div>
                     <Button className={classes.emptyButton} size='large' type='button' variant='contained' color='secondary' onClick={onEmptyCart}>EmptyCart</Button>
                     <Button component={Link} to='/checkout' className={classes.checkoutButton} size='large' type='button' variant='contained' color='primary'>Checkout</Button>
